@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import { checkToken, checkUserAction } from '../middlewares';
 import { signup, login } from '../controllers/Auth';
 import { create, edit, deleteTodo, getTodos } from '../controllers/Todo';
+import { createPost, getPosts, updatePost, deletePost } from '../controllers/Post';
 
 const api = Router();
 
@@ -20,5 +21,11 @@ api.post('/todo', checkToken, checkUserAction, create);
 api.put('/todo/:id', checkToken, checkUserAction, edit);
 api.delete('/todo/:id', checkToken, checkUserAction, deleteTodo);
 api.get('/todos', checkToken, getTodos);
+
+// Posts
+api.post('/post', checkToken, checkUserAction, createPost);
+api.get('/posts', checkToken, getPosts);
+api.put('/post/:id', checkToken, checkUserAction, updatePost);
+api.delete('/post/:id', checkToken, checkUserAction, deletePost);
 
 module.exports = api

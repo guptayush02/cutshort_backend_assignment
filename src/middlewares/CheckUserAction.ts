@@ -1,8 +1,14 @@
-import { success, error } from '../../src/utils';
+import { error } from '../../src/utils';
 
 export default async function checkAction(req: any, res: any, next: any) {
   try {
-    if (JSON.stringify(req.body.userId) === JSON.stringify(req.user._id)) {
+    const { body } = req;
+
+    if (!body.userId) {
+      return error(res, {status: false, message: 'UserId is missing in body'});
+    }
+
+    if (JSON.stringify(body.userId) === JSON.stringify(req.user._id)) {
       return next();
     }
 

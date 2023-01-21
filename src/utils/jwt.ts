@@ -17,7 +17,7 @@ interface UserData {
 }
 
 const createToken = (user: UserData): TokenData => {
-  const expiresIn = 60 * 60; // an hour
+  const expiresIn = 1440 * 60; // an hour
   const secret = process.env.JWT_SECRET || 'urhfhf4909393uhb';
   const dataStoredInToken: DataStoredInToken = {
     _id: user._id,

@@ -3,7 +3,6 @@ import { success, error } from '../../../src/utils';
 
 async function create(req: any, res: any) {
   try {
-    console.log("create")
     const { body, user } = req;
     const options = {
       ...body,

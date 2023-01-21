@@ -1,4 +1,3 @@
-// Edit and mark as complete
 import Todo from '../../models/todo';
 import { success, error } from '../../../src/utils';
 
