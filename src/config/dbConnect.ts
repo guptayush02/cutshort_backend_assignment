@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 export default async function dbConnect() {
 
-  const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/cutshort_backend_assignment";
+  const dbUrl:string = process.env.DB_URL!;
 
   type ConnectionOptions = {
     useCreateIndex: boolean,
@@ -10,7 +10,7 @@ export default async function dbConnect() {
     useUnifiedTopology: boolean
   }
   
-  const options: any = {
+  const options = {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true

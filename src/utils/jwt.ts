@@ -18,7 +18,7 @@ interface UserData {
 
 const createToken = (user: UserData): TokenData => {
   const expiresIn = 1440 * 60; // an hour
-  const secret = process.env.JWT_SECRET || 'urhfhf4909393uhb';
+  const secret:string = process.env.JWT_SECRET!;
   const dataStoredInToken: DataStoredInToken = {
     _id: user._id,
   };
@@ -30,7 +30,8 @@ const createToken = (user: UserData): TokenData => {
 
 const decodeToken = async (token: TokenData) => {
   try {
-    return jwt.verify(token.token, 'urhfhf4909393uhb');
+    const secret:string = process.env.JWT_SECRET!;
+    return jwt.verify(token.token, secret);
   } catch (error) {
     return error;
   }
