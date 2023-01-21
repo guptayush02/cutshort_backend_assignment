@@ -1,5 +1,6 @@
 import Todo from '../../models/todo';
 import { success, error } from '../../../src/utils';
+const mongoose = require("mongoose");
 
 async function getTodos(req: any, res: any) {
   try {
@@ -7,7 +8,7 @@ async function getTodos(req: any, res: any) {
 
     let userId = user._id;
     if (Object.keys(query).length) {
-      userId = query.userId
+      userId = mongoose.Types.ObjectId(query.userId);
     }
 
     const where = { userId };

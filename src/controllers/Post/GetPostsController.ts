@@ -1,5 +1,6 @@
 import Post from '../../models/post';
 import { success, error } from '../../../src/utils';
+const mongoose = require("mongoose");
 
 async function getPosts(req: any, res: any) {
   try {
@@ -7,10 +8,38 @@ async function getPosts(req: any, res: any) {
 
     let id = user._id;
     if (Object.keys(query).length) {
-      id = query.userId;
+      id = mongoose.Types.ObjectId(query.userId);
     }
 
-    const posts = await Post.find({userId: id});
+    const posts = await Post.aggregate([
+      {
+        $match: {
+          userId: id
+        }
+      },
+      { $sort: { createdAt: -1 } },
+      {
+        $lookup: {
+          from: 'comments',
+          localField: '_id',
+          foreignField: 'postId',
+          as: 'comments',
+          pipeline: [{
+            $lookup: {
+              from: 'replycomments',
+              localField: '_id',
+              foreignField: 'commentId',
+              as: 'replies',
+              pipeline: [
+                { $sort: { createdAt: -1 } }
+              ]
+            }
+          },
+          { $sort: { createdAt: -1 } }]
+        } 
+      }
+    ]);
+
     if (posts.length) {
       return success(res, {status: true, message: 'Create Post Successfully', data: posts});
     }

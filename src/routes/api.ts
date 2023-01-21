@@ -4,6 +4,7 @@ import { checkToken, checkUserAction } from '../middlewares';
 import { signup, login } from '../controllers/Auth';
 import { create, edit, deleteTodo, getTodos } from '../controllers/Todo';
 import { createPost, getPosts, updatePost, deletePost } from '../controllers/Post';
+import { createComment, replyConnent } from '../controllers/Comment';
 
 const api = Router();
 
@@ -27,5 +28,9 @@ api.post('/post', checkToken, checkUserAction, createPost);
 api.get('/posts', checkToken, getPosts);
 api.put('/post/:id', checkToken, checkUserAction, updatePost);
 api.delete('/post/:id', checkToken, checkUserAction, deletePost);
+
+// Comments
+api.post('/comment', checkToken, createComment);
+api.post('/comment-reply', checkToken, replyConnent);
 
 module.exports = api
