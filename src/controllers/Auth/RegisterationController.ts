@@ -12,8 +12,8 @@ async function signup(req: any, res: any) {
       return error(res, {status: false, message: 'Email already exist'});
     } else if (body.password !== body.confirmationPassword) {
       return error(res, {status: false, message: 'Password not match'});
-    } else if (body.password.length > 6) {
-      return error(res, {status: false, message: 'Password should be 6 character'});
+    } else if (body.password.length > 7) {
+      return error(res, {status: false, message: 'Password should be less then 7 character'});
     }
 
     // encrypt password

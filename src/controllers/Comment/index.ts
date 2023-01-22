@@ -1,4 +1,4 @@
 import createComment from './CreateCommentController';
-import replyConnent from './ReplyCommentController';
+import replyComment from './ReplyCommentController';
 
-export { createComment, replyConnent };
+export { createComment, replyComment };

@@ -4,7 +4,7 @@ import { checkToken, checkUserAction } from '../middlewares';
 import { signup, login } from '../controllers/Auth';
 import { create, edit, deleteTodo, getTodos } from '../controllers/Todo';
 import { createPost, getPosts, updatePost, deletePost } from '../controllers/Post';
-import { createComment, replyConnent } from '../controllers/Comment';
+import { createComment, replyComment } from '../controllers/Comment';
 import { searchUser } from '../controllers/Search';
 
 const api = Router();
@@ -32,7 +32,7 @@ api.delete('/post/:id', checkToken, checkUserAction, deletePost);
 
 // Comments
 api.post('/comment', checkToken, createComment);
-api.post('/comment-reply', checkToken, replyConnent);
+api.post('/comment-reply', checkToken, replyComment);
 
 // Search
 api.get('/search', checkToken, searchUser);

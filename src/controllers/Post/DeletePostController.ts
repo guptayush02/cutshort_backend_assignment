@@ -5,6 +5,10 @@ async function deletePost(req: any, res: any) {
   try {
     const { id } = req.params;
 
+    if (!id) {
+      return error(res, {status: false, message: 'Missing Params'});
+    }
+
     const where = { _id: id };
     await Post.findOneAndDelete(where);
     return success(res, {status: true, message: 'Delete post Successfully'});

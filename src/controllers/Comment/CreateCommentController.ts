@@ -1,7 +1,7 @@
 import Comment from '../../models/comment';
 import { success, error } from '../../../src/utils';
 
-export default async function createConnent(req:any, res:any) {
+export default async function createComment(req:any, res:any) {
   try {
     const { body, user } = req;
 

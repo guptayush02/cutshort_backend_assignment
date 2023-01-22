@@ -6,7 +6,7 @@ interface userDataInterface {
   _id: string;
 }
 
-async function authentication(req:any, res:any, next: any) {
+async function authentication(req:any, res:any, next: Function) {
   try {
     const { headers } = req;
 

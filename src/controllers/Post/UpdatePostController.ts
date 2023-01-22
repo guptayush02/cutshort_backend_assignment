@@ -8,6 +8,10 @@ async function UpdatePostController(req: any, res: any) {
     const option = { post: body.post };
     const where = { _id: params.id }
 
+    if (!Object.keys(body).length) {
+      return error(res, {status: false, message: 'Parameters missing'});
+    }
+
     await Post.findOneAndUpdate(where, option);
     const posts = await Post.find(where);
     if (posts.length) {

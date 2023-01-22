@@ -11,7 +11,19 @@ async function getPosts(req: any, res: any) {
       id = mongoose.Types.ObjectId(query.userId);
     }
 
-    const posts = await Post.aggregate([
+    const posts:any = await getPostsById(id);
+    if (posts.length) {
+      return success(res, {status: true, message: 'Create Post Successfully', data: posts});
+    }
+    return error(res, {status: false, message: 'Post not found', data: posts});
+  } catch (err) {
+    return error(res, {status: false, message: err});
+  }
+}
+
+const getPostsById = async (id:string) => {
+  return await new Promise((resolve, reject) => {
+    const posts = Post.aggregate([
       {
         $match: {
           userId: id
@@ -39,14 +51,8 @@ async function getPosts(req: any, res: any) {
         } 
       }
     ]);
-
-    if (posts.length) {
-      return success(res, {status: true, message: 'Create Post Successfully', data: posts});
-    }
-    return error(res, {status: false, message: 'Post not found', data: posts});
-  } catch (err) {
-    return error(res, {status: false, message: err});
-  }
+    resolve(posts);
+  })
 }
 
 export default getPosts;

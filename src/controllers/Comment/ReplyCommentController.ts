@@ -1,7 +1,7 @@
 import Reply from '../../models/replyComment';
 import { success, error } from '../../../src/utils';
 
-export default async function replyConnent(req:any, res:any) {
+export default async function replyComment(req:any, res:any) {
   try {
     const { body, user } = req;
 

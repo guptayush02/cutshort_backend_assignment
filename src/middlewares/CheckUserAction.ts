@@ -1,6 +1,6 @@
 import { error } from '../../src/utils';
 
-export default async function checkAction(req: any, res: any, next: any) {
+export default async function checkAction(req: any, res: any, next: Function) {
   try {
     const { body } = req;
 
