@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "0d961ea4-9d33-4c40-8c54-109759514d57",
+		"name": "cutshort_backend_assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"ayush1\",\n    \"email\": \"tahmid+1@gmail.com\",\n    \"password\": \"123456\",\n    \"confirmationPassword\": \"123456\"\n}"
+				},
+				"url": {
+					"raw": "https://cutshortbackendassignment-production.up.railway.app/api/register",
+					"protocol": "https",
+					"host": [
+						"cutshortbackendassignment-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"tahmid+1@gmail.com\",\n    \"password\": \"123456\"\n}"
+				},
+				"url": {
+					"raw": "https://cutshortbackendassignment-production.up.railway.app/api/login",
+					"protocol": "https",
+					"host": [
+						"cutshortbackendassignment-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TODO create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2NkMjJiYjMzNGQzYTllNWYwM2I3MDQiLCJpYXQiOjE2NzQzODgzMTYsImV4cCI6MTY3NDQ3NDcxNn0.AcnmchQjzG-Q6xq3UbcT0lcEGasWJJb55Ak_QoPY2C4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"task\": \"xyz1\",\n    \"status\": \"Create\",\n    \"userId\": \"63cd22bb334d3a9e5f03b704\"\n}"
+				},
+				"url": {
+					"raw": "https://cutshortbackendassignment-production.up.railway.app/api/todo",
+					"protocol": "https",
+					"host": [
+						"cutshortbackendassignment-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TODO update Edit/mark complete",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2NkMjJiYjMzNGQzYTllNWYwM2I3MDQiLCJpYXQiOjE2NzQzODgzMTYsImV4cCI6MTY3NDQ3NDcxNn0.AcnmchQjzG-Q6xq3UbcT0lcEGasWJJb55Ak_QoPY2C4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"task\": \"xyz2\",\n    \"markComplete\": false,\n    \"userId\": \"63cd22bb334d3a9e5f03b704\"\n}"
+				},
+				"url": {
+					"raw": "https://cutshortbackendassignment-production.up.railway.app/api/todo/63cd238a334d3a9e5f03b70a",
+					"protocol": "https",
+					"host": [
+						"cutshortbackendassignment-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"todo",
+						"63cd238a334d3a9e5f03b70a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TODO delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2NkMjJiYjMzNGQzYTllNWYwM2I3MDQiLCJpYXQiOjE2NzQzODgzMTYsImV4cCI6MTY3NDQ3NDcxNn0.AcnmchQjzG-Q6xq3UbcT0lcEGasWJJb55Ak_QoPY2C4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"63ccea366598543d2b301994\"\n}"
+				},
+				"url": {
+					"raw": "https://cutshortbackendassignment-production.up.railway.app/api/todo/63cceb0755763fd5cb30f110",
+					"protocol": "https",
+					"host": [
+						"cutshortbackendassignment-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"todo",
+						"63cceb0755763fd5cb30f110"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TODO get user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2NkMjJiYjMzNGQzYTllNWYwM2I3MDQiLCJpYXQiOjE2NzQzODgzMTYsImV4cCI6MTY3NDQ3NDcxNn0.AcnmchQjzG-Q6xq3UbcT0lcEGasWJJb55Ak_QoPY2C4",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://cutshortbackendassignment-production.up.railway.app/api/todos?userId=63cd22bb334d3a9e5f03b704",
+					"protocol": "https",
+					"host": [
+						"cutshortbackendassignment-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"todos"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "63cd22bb334d3a9e5f03b704"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2NkMjJiYjMzNGQzYTllNWYwM2I3MDQiLCJpYXQiOjE2NzQzODgzMTYsImV4cCI6MTY3NDQ3NDcxNn0.AcnmchQjzG-Q6xq3UbcT0lcEGasWJJb55Ak_QoPY2C4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"post\": \"hey there 2\",\n    \"userId\": \"63cd22bb334d3a9e5f03b704\"\n}"
+				},
+				"url": {
+					"raw": "https://cutshortbackendassignment-production.up.railway.app/api/post",
+					"protocol": "https",
+					"host": [
+						"cutshortbackendassignment-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2NkMjJiYjMzNGQzYTllNWYwM2I3MDQiLCJpYXQiOjE2NzQzODgzMTYsImV4cCI6MTY3NDQ3NDcxNn0.AcnmchQjzG-Q6xq3UbcT0lcEGasWJJb55Ak_QoPY2C4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://cutshortbackendassignment-production.up.railway.app/api/posts?userId=63cd22bb334d3a9e5f03b704",
+					"protocol": "https",
+					"host": [
+						"cutshortbackendassignment-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "63cd22bb334d3a9e5f03b704"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2NkMjJiYjMzNGQzYTllNWYwM2I3MDQiLCJpYXQiOjE2NzQzODgzMTYsImV4cCI6MTY3NDQ3NDcxNn0.AcnmchQjzG-Q6xq3UbcT0lcEGasWJJb55Ak_QoPY2C4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"post\": \"update post1\",\n    \"userId\": \"63cd22bb334d3a9e5f03b704\"\n}"
+				},
+				"url": {
+					"raw": "https://cutshortbackendassignment-production.up.railway.app/api/post/63cd2456334d3a9e5f03b71c",
+					"protocol": "https",
+					"host": [
+						"cutshortbackendassignment-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"post",
+						"63cd2456334d3a9e5f03b71c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2NkMjJiYjMzNGQzYTllNWYwM2I3MDQiLCJpYXQiOjE2NzQzODgzMTYsImV4cCI6MTY3NDQ3NDcxNn0.AcnmchQjzG-Q6xq3UbcT0lcEGasWJJb55Ak_QoPY2C4",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"63cd22bb334d3a9e5f03b704\"\n}"
+				},
+				"url": {
+					"raw": "https://cutshortbackendassignment-production.up.railway.app/api/post/63cd2456334d3a9e5f03b71c",
+					"protocol": "https",
+					"host": [
+						"cutshortbackendassignment-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"post",
+						"63cd2456334d3a9e5f03b71c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "COMMENT ON POST create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2NkMjJiYjMzNGQzYTllNWYwM2I3MDQiLCJpYXQiOjE2NzQzODgzMTYsImV4cCI6MTY3NDQ3NDcxNn0.AcnmchQjzG-Q6xq3UbcT0lcEGasWJJb55Ak_QoPY2C4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"postId\": \"63cd2456334d3a9e5f03b71c\",\n    \"comment\": \"first comment\"\n}"
+				},
+				"url": {
+					"raw": "https://cutshortbackendassignment-production.up.railway.app/api/comment",
+					"protocol": "https",
+					"host": [
+						"cutshortbackendassignment-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comment Reply create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2NkMjJiYjMzNGQzYTllNWYwM2I3MDQiLCJpYXQiOjE2NzQzODgzMTYsImV4cCI6MTY3NDQ3NDcxNn0.AcnmchQjzG-Q6xq3UbcT0lcEGasWJJb55Ak_QoPY2C4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"commentId\": \"63cd251e334d3a9e5f03b72c\",\n    \"reply\": \"second Reply\"\n}"
+				},
+				"url": {
+					"raw": "https://cutshortbackendassignment-production.up.railway.app/api/comment-reply",
+					"protocol": "https",
+					"host": [
+						"cutshortbackendassignment-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"comment-reply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2NkMjJiYjMzNGQzYTllNWYwM2I3MDQiLCJpYXQiOjE2NzQzODgzMTYsImV4cCI6MTY3NDQ3NDcxNn0.AcnmchQjzG-Q6xq3UbcT0lcEGasWJJb55Ak_QoPY2C4",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://cutshortbackendassignment-production.up.railway.app/api/search?searchquery=a",
+					"protocol": "https",
+					"host": [
+						"cutshortbackendassignment-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "searchquery",
+							"value": "a"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
