@@ -21,7 +21,8 @@ async function login(req: any, res: any) {
     }
 
     const token = await createToken(checkUser);
-    return success(res, {status: true, message: 'Login Successfully', data: token.token});
+    delete checkUser.password;
+    return success(res, {status: true, message: 'Login Successfully', data: {...token, user: checkUser}});
   } catch (err) {
     return error(res, {status: false, message: err});
   }
