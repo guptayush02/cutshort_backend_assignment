@@ -16,6 +16,7 @@ export default async function dbConnect() {
     useUnifiedTopology: true
   }
 
+  mongoose.set('strictQuery', false);
   mongoose.connect(dbUrl).then(()=>console.log("DB Connected"))
   .catch((err)=>console.log(err))
 }

@@ -7,6 +7,10 @@ dotenv.config();
 
 // routes
 const routes = require("./src/routes/api");
+app.get("/", () => {
+  return "Cutshort Backend Assignment"
+})
+
 app.use('/api', routes);
 
 const port = process.env.BACK_PORT;
