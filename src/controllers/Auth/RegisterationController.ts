@@ -32,6 +32,7 @@ async function signup(req: any, res: any) {
     }
     return error(res, {status: false, message: 'Something went wrong, Please try again later'});
   } catch (err) {
+    console.log("err--->", err)
     return error(res, {status: false, message: err});
   }
 }
