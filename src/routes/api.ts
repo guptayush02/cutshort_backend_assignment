@@ -6,6 +6,7 @@ import { create, edit, deleteTodo, getTodos } from '../controllers/Todo';
 import { createPost, getPosts, updatePost, deletePost } from '../controllers/Post';
 import { createComment, replyComment } from '../controllers/Comment';
 import { searchUser } from '../controllers/Search';
+import { success } from '../utils/response';
 
 const api = Router();
 
@@ -17,6 +18,10 @@ api.use(bodyParser.json());
 
 api.post('/register', signup);
 api.post('/login', login);
+
+api.get("/", (req, res) => {
+  return success(res, {status: true, message: 'Get Test Cutshort Assignment'});
+});
 
 // Todos
 api.post('/todo', checkToken, checkUserAction, create);
